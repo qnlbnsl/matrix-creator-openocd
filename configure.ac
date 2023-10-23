@@ -1,6 +1,5 @@
-AC_PREREQ(2.64)
-AC_INIT([openocd], [0.10.0-dev],
-  [OpenOCD Mailing List <openocd-devel@lists.sourceforge.net>])
+AC_PREREQ([2.69])
+AC_INIT([openocd],[0.10.0-dev],[OpenOCD Mailing List <openocd-devel@lists.sourceforge.net>])
 AC_CONFIG_SRCDIR([src/openocd.c])
 
 m4_include([config_subdir.m4])dnl
@@ -22,9 +21,9 @@ AH_BOTTOM([
 #include <helper/replacements.h>
 ])
 
-AC_LANG_C
+AC_LANG([C])
 AC_PROG_CC
-AC_PROG_CC_C99
+# AC_PROG_CC_C99
 AM_PROG_CC_C_O
 AC_PROG_RANLIB
 PKG_PROG_PKG_CONFIG([0.23])
@@ -34,7 +33,7 @@ m4_defun([_LT_AC_LANG_CXX_CONFIG], [:])
 m4_defun([_LT_AC_LANG_F77_CONFIG], [:])
 m4_defun([_LT_AC_LANG_GCJ_CONFIG], [:])
 AC_DISABLE_SHARED
-AC_PROG_LIBTOOL
+LT_INIT
 AC_SUBST([LIBTOOL_DEPS])
 
 dnl configure checks required for Jim files (these are obsolete w/ C99)
@@ -133,8 +132,7 @@ AC_CHECK_HEADERS([net/if.h], [], [], [dnl
 
 AC_HEADER_ASSERT
 AC_HEADER_STDBOOL
-AC_HEADER_TIME
-
+HAVE_SYS_TIME_H
 AC_C_BIGENDIAN
 
 AC_CHECK_FUNCS([strndup])
