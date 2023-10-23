@@ -37,7 +37,7 @@ else
     echo "Setting up submodules"
     git submodule init
     git submodule update
-    cp jimctl-config-replacement.sh jimctl/autosetup/config.guess
+    # cp jimctl-config-replacement.sh jimtcl/autosetup/config.guess
 fi
 
 echo "Bootstrap complete. Quick build instructions:"
