@@ -13,6 +13,10 @@ DEB_MAKE_BUILD_TARGET := all pdf html
 DEB_STRIP_EXCLUDE := .elf .bin
 DEB_COMPRESS_EXCLUDE := .elf .bin
 
+# Allow builds in new GCC Compiler.
+## TODO: Fix bitbang_swd is defined in both libocdjtagdrivers_la-bitbang.o and libocdjtagdrivers_la-bcm2835gpio.o.
+CFLAGS += -fcommonCFLAGS += -fcommon
+
 # TODO: Use --enable-oocd_trace later, right now it's just a proof-of-concept.
 DEB_CONFIGURE_EXTRA_FLAGS := \
 	--enable-dummy \
