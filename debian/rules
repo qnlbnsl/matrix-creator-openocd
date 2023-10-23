@@ -15,7 +15,7 @@ DEB_COMPRESS_EXCLUDE := .elf .bin
 
 # Allow builds in new GCC Compiler.
 ## TODO: Fix bitbang_swd is defined in both libocdjtagdrivers_la-bitbang.o and libocdjtagdrivers_la-bcm2835gpio.o.
-CFLAGS += -fcommonCFLAGS += -fcommon
+CFLAGS += -fcommon
 
 # TODO: Use --enable-oocd_trace later, right now it's just a proof-of-concept.
 DEB_CONFIGURE_EXTRA_FLAGS := \
